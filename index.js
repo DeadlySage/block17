@@ -11,27 +11,49 @@ class Numbers {
   }
   count() {
     //return the count of numbers in data
+    return this.data.length;
   }
   printNumbers() {
     //print the numbers in data
+    this.data.forEach((element, index) => {
+      console.log(this.data[index]);
+    });
   }
   odds() {
     //return the odd numbers in data
+    const oddNumbers = this.data.filter((number) => {
+      return number % 2 === 1;
+    });
+    return oddNumbers;
   }
   evens() {
     //return the even numbers in data
+    const evenNumbers = this.data.filter((number) => {
+      return number % 2 === 0;
+    });
+    return evenNumbers;
   }
   sum() {
     //return the sum of the numbers
+    return this.data.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      0
+    );
   }
   product() {
     //return the product of the numbers
+    return this.data.reduce(
+      (accumulator, currentValue) => accumulator * currentValue,
+      1
+    );
   }
   greaterThan(target) {
     //return the numbers greater than the target
+    return this.data.filter((number) => number > target);
   }
   howMany(target) {
     //return the count of a given number
+    return this.data.filter((number) => number === target).length;
   }
 }
 
